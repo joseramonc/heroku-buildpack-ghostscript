@@ -1,18 +1,17 @@
 # Heroku Buildpack for Ghostscript
 
-Currently installs Ghostscript 9.07 on Heroku Cedar.
+Currently installs Ghostscript 10.01.2 on Heroku Cedar.
 
 ## Install
 
-    # Use heroku-buildpack-multi
-    $ cd /path/to/your-app
-    $ heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+Add the buildpack to your app.json [as described here](https://devcenter.heroku.com/articles/app-json-schema#buildpacks):
 
-    # Create a .buildpacks file with including ghostscript
-    $ cd /path/to/your-app
-    $ cat .buildpacks
-    https://github.com/heroku/heroku-buildpack-ruby.git
-    https://github.com/elbongurk/heroku-buildpack-ghostscript.git
+E.g.,
 
-    # Push changes to deploy
-    $ git push
+```
+  "buildpacks": [
+    { "url": "https://github.com/Manifestly/heroku-buildpack-ghostscript" },
+    { "url": "heroku/ruby" }
+  ],
+
+```

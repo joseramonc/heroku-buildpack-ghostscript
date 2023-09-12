@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-echo "-----> Installing Ghostscript 9.10"
+echo "-----> Installing Ghostscript 10.01.2"
 
 BUILD_DIR=$1
-PACKAGE="http://downloads.ghostscript.com/public/ghostscript-9.05.tar.gz"
+PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz"
 
 mkdir -p $LOCATION
-curl -O $PACKAGE -s
+curl -L -O $PACKAGE -s
 
 echo "-----> Building runtime environment for Ghostscript"
 
-tar xzvf ghostscript-9.05.tar.gz
-cd ghostscript-9.05
+tar zxvf ghostscript-10.01.2.tar.gz
+cd ghostscript-10.01.2
+
 ./configure --disable-cups --disable-gtk --with-drivers=FILES
 make
 cp bin/gs ~/bin
@@ -21,4 +22,4 @@ echo "Ghostscript version:"
 echo gs --version
 
 cd ~
-rm -rf ghostscript-9.05*
+rm -rf ghostscript-10.01.2*
