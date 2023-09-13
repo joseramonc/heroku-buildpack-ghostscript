@@ -4,8 +4,13 @@
 echo "-----> Installing Ghostscript 10.01.2"
 
 BUILD_DIR=$1
+BUILD_DIR_BIN="$BUILD_DIR/bin
+BUILD_DIR_LIB="$BUILD_DIR/lib
 PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz"
-BIN_PATH="$BUILD_DIR/ghostscript-10.01.2/bin"
+GS_BIN_PATH="$BUILD_DIR/ghostscript-10.01.2/bin"
+GS_LIB_PATH="$BUILD_DIR/ghostscript-10.01.2/lib"
+
+mkdir $BUILD_DIR_BIN $BUILD_DIR_LIB
 
 echo "-----> Building runtime environment for Ghostscript"
 
@@ -21,6 +26,9 @@ ls
 echo "Ghostscript version:"
 bin/gs --version
 
-mkdir -p $BUILD_DIR/.profile.d
-echo "export PATH=\"\$BIN_PATH:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
-cp $BUILD_DIR/.profile.d/ghostcript.sh ./export
+mv $GS_BIN_PATH/* $BUILD_DIR_BIN/
+mv $GS_LIB_PATH/* $BUILD_DIR_LIB/
+
+#mkdir -p $BUILD_DIR/.profile.d
+#echo "export PATH=\"\$BUILD_DIR_BIN:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
+#cp $BUILD_DIR/.profile.d/ghostcript.sh ./export
