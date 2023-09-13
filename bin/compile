@@ -5,7 +5,7 @@ echo "-----> Installing Ghostscript 10.01.2"
 
 BUILD_DIR=$1
 PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz"
-LOCATION="$BUILD_DIR/ghostscript"
+LOCATION="$BUILD_DIR/vendor/gs"
 
 mkdir -p $LOCATION
 curl -L -O $PACKAGE -s
@@ -22,7 +22,7 @@ ls
 echo "Ghostscript version:"
 bin/gs --version
 
-mv bin/gs ~/bin
+mv -f bin/gs /bin
 
-cd ~
-rm -rf ghostscript-10.01.2*
+#mkdir -p $BUILD_DIR/.profile.d
+#echo "export PATH=\"\$HOME/vendor/gs/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
