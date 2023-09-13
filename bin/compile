@@ -22,7 +22,5 @@ ls
 echo "Ghostscript version:"
 bin/gs --version
 
-mv -f bin/gs /bin
-
-#mkdir -p $BUILD_DIR/.profile.d
-#echo "export PATH=\"\$HOME/vendor/gs/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/vendor/gs/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
