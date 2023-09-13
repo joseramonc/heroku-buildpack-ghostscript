@@ -7,8 +7,6 @@ BUILD_DIR=$1
 PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz"
 BIN_PATH="$BUILD_DIR/ghostscript-10.01.2/bin"
 
-mkdir -p $LOCATION
-
 echo "-----> Building runtime environment for Ghostscript"
 
 cd $BUILD_DIR
