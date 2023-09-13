@@ -4,8 +4,8 @@
 echo "-----> Installing Ghostscript 10.01.2"
 
 BUILD_DIR=$1
-BUILD_DIR_BIN="$BUILD_DIR/bin
-BUILD_DIR_LIB="$BUILD_DIR/lib
+BUILD_DIR_BIN="$BUILD_DIR/bin"
+BUILD_DIR_LIB="$BUILD_DIR/lib"
 PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz"
 GS_BIN_PATH="$BUILD_DIR/ghostscript-10.01.2/bin"
 GS_LIB_PATH="$BUILD_DIR/ghostscript-10.01.2/lib"
