@@ -23,4 +23,4 @@ bin/gs --version
 
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$BIN_PATH:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
-cp $BUILD_DIR/.profile.d/ghoscript.sh ./export
+cp $BUILD_DIR/.profile.d/ghostcript.sh ./export
