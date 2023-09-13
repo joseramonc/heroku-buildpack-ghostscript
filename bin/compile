@@ -17,11 +17,12 @@ cd ghostscript-10.01.2
 
 ./configure --disable-cups --disable-gtk --with-drivers=FILES
 make
+# Debug
 ls
-mv bin/gs ~/bin
-
 echo "Ghostscript version:"
-gs --version
+bin/gs --version
+
+mv bin/gs ~/bin
 
 cd ~
 rm -rf ghostscript-10.01.2*
