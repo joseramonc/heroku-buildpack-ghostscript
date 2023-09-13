@@ -5,6 +5,7 @@ echo "-----> Installing Ghostscript 10.01.2"
 
 BUILD_DIR=$1
 PACKAGE="https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10012/ghostscript-10.01.2.tar.gz"
+LOCATION="$BUILD_DIR/ghostscript"
 
 mkdir -p $LOCATION
 curl -L -O $PACKAGE -s
@@ -16,10 +17,11 @@ cd ghostscript-10.01.2
 
 ./configure --disable-cups --disable-gtk --with-drivers=FILES
 make
-cp bin/gs ~/bin
+ls
+mv bin/gs ~/bin
 
 echo "Ghostscript version:"
-echo gs --version
+gs --version
 
 cd ~
 rm -rf ghostscript-10.01.2*
